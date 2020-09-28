@@ -1,0 +1,221 @@
+section#adventure-about-section {
+  background-color: #9bba1f;
+}
+
+section#adventure-vic-section {
+  background-color: #ffa20f;
+}
+
+section#adventure-nsw-section {
+  background-color: #f73f3f;
+}
+
+section#adventure-tas-section {
+  background-color: #9bba1f;
+}
+
+section#adventure-akl-section {
+  background-color: #ffa20f;
+}
+
+section#adventure-qld-section {
+  background-color: #f73f3f;
+}
+
+section.adventure-section-group {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+div.adventure-about-group h1 {
+  padding-bottom: 20px;
+}
+
+div.adventure-grid-group {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+div.adventure-content-con-group {
+  grid-row: 1;
+  grid-column: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+}
+
+div.adventure-content-con-group h2 {
+  padding-bottom: 20px;
+}
+
+/* ------- Swiper Slide ----------- */
+
+.swiper-container {
+  grid-row: 1;
+  grid-column: 2;
+  width: 100%;
+  height: 400px;
+}
+
+.swiper-container .swiper-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-container .swiper-wrapper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 100%;
+  background: #000;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  color: #262626;
+  background: #fff;
+}
+
+.card .img-con-group {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  background: #000;
+}
+
+.card .img-con-group img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
+
+.card .card-info-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.card .card-info-group a {
+  font-size: 40px;
+  cursor: pointer;
+  color: red;
+}
+
+.card .card-info-group a:hover {
+  color: black;
+}
+
+/* Modal-Backdrop */
+
+div.modal-backdrop-con {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: #353535 !important;
+}
+
+div.modal-backdrop-con div.modal-slide-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+h3.slide-counter {
+  position: absolute;
+  z-index: 200;
+  margin: 20px;
+}
+
+button.modal-close-btn {
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: normal;
+  cursor: pointer;
+  z-index: 200;
+  margin: 20px;
+  border: none;
+  background-color: #4d4d4d;
+}
+
+button.modal-close-btn:hover {
+  border: none;
+  background-color: #6e6e6e;
+}
+
+/* ----------- Responsive Design -------------------- */
+
+
+/* ==================== Mobile : Portrait ================================================ */
+
+@media only screen and (max-width:1060px) {
+
+  div.adventure-grid-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.adventure-content-con-group {
+    order: 2;
+    padding-right: 0px;
+
+  }
+
+  button.modal-close-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+
+
+#work-in-progress {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  font-size: 150px;
+  text-align: center;
+  vertical-align: middle;
+  color: #000000;
+  z-index: 200000;
+  background-color: #FFFFFF;
+}
+
+.work-spinner {
+  background-color: rgba(0, 0, 0, 0);
+  border: 9px solid rgba(27, 61, 226, 0.9);
+  opacity: .9;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-radius: 120px;
+  -webkit-box-shadow: 0 0 35px #1B3DE2;
+  box-shadow: 0 0 35px #1B3DE2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  -moz-animation: spin .5s infinite linear;
+  -webkit-animation: spin .5s infinite linear;
+  -o-animation: spin .5s infinite linear;
+  animation: spin .5s infinite linear;
+}

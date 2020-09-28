@@ -1,0 +1,129 @@
+section.parenting-section-group {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+article.parenting-article-group h1 {
+  margin-bottom: 20px;
+}
+
+div.parenting-about-group {
+  margin-bottom: 60px;
+}
+
+div.parenting-grid-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: left;
+}
+
+div.parenting-grid-group div.parenting-wrapper-group {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #ececec;
+}
+
+div.parenting-grid-group div.parenting-wrapper-group:last-child {
+  margin-right: 0px;
+}
+
+div.parenting-grid-group div:last-child {
+  margin-bottom: 0;
+}
+
+div.parenting-grid-group img {
+  object-fit: cover;
+  height: 250px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+div.parenting-grid-group a {
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+div.parenting-grid-group a:hover {
+  color: #15c1e5;
+}
+
+div.parenting-grid-group p {
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+/* ---------------- Parenting Blog --------------- */
+
+main .parenting-blog-section-group {
+  padding-top: 60px;
+}
+
+article.parenting-blog-article-group {
+  width: 60%;
+  margin-bottom: 60px;
+}
+
+article.parenting-blog-article-group h1,
+h2 {
+  margin-bottom: 20px
+}
+
+div.parenting-blog-wrapper-ul-group {
+  display: flex;
+}
+
+div.parenting-blog-wrapper-ul-group ul li {
+  margin: 20px;
+}
+
+div.parenting-blog-wrapper-ul-group ul li:last-child,
+div.parenting-blog-wrapper-ul-group ul li:first-child {
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+
+div.parenting-blog-wrapper-ol-group ol li {
+  margin: 20px;
+  font-weight: bold;
+}
+
+div.parenting-blog-wrapper-ol-group ol li p {
+  font-weight: normal;
+}
+
+/* ==================== Mobile : Portrait ================================================ */
+
+@media only screen and (max-width:1060px) {
+
+  div.parenting-grid-group div.parenting-wrapper-group {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  div.parenting-grid-group img {
+    max-height: 300px;
+  }
+
+  article.parenting-blog-article-group {
+    width: 90%;
+  }
+
+  div.parenting-blog-wrapper-ul-group {
+    display: block;
+  }
+
+  div.parenting-blog-wrapper-ul-group ul {
+    margin-bottom: 20px;
+  }
+
+}

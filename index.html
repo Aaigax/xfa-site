@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/swiper.min.css">
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+
+  <title>Home • XFA Family Zone</title>
+
+</head>
+
+<body>
+
+  <header id="show-header-template"></header>
+
+  <main>
+
+    <div class="modal">
+      <div class="show-quiz-template">
+      </div>
+    </div>
+
+    <div id="home-banner-con" class="swiper-container">
+      <div id="swiper-wrapper" class="swiper-wrapper">
+        <!-- populated with js -->
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- </div> -->
+
+    <section id="home-welcome-section" class="home-section-group">
+
+      <article class="home-article-group">
+
+        <div class="home-welcome-con-group">
+
+          <div class="home-welcome-wrapper-group">
+
+            <h1>
+              <span class="fa fa-handshake-o"></span>Welcome
+            </h1>
+
+            <p>
+              Talofa, we are a family of five. We are a dynamic bunch of
+              individuals and grateful, proud Samoans. You will find us on this
+              site talking about our family life and sharing some of our own
+              parenting experiences while raising our three young boys.<br><br>
+
+              We post contents of everyone participating in family activities
+              and other educational programs that challenges and ignites a love
+              of learning. All with a great hope to inspire others and to make a
+              difference.<br><br>
+
+              Faafetai & Enjoy viewing!
+
+            </p>
+
+            <button id="welcome-btn" class="home-btn-group">
+              QUIZ ME
+            </button>
+
+
+          </div>
+
+          <div class="home-welcome-img-wrapper-group">
+            <img id="home-welcome-img-1" loading="lazy" src="/images/home/welcome_1.jpg" />
+            <img id="home-welcome-img-2" loading="lazy" src="/images/home/welcome_2.jpg" />
+            <img id="home-welcome-img-3" loading="lazy" src="/images/home/welcome_3.jpg" />
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- Events -->
+
+    <section id="home-events-section" class="home-section-group">
+
+      <article class="home-article-group">
+
+        <div class="home-events-con-group">
+
+          <div class="journey-wrapper-group">
+
+            <h1><span class="fa fa-globe"></span>Adventure</h1>
+
+            <img class="events-img-group" loading="lazy" src="/images/home/journey.jpg" />
+            <p>
+              Over the course of our family journey, we strive to achieve a set
+              of goals that will help us all grow as individuals and become
+              closer as a family.
+            </p>
+
+            <button id="journey-btn" class="home-btn-group" onClick="location.href='/journey/adventure'">
+              Read More
+            </button>
+
+          </div>
+
+          <div class="events-wrapper-group">
+
+            <h1><span class="fa fa-calendar"></span>Education</h1>
+            <img loading="lazy" src="/images/home/education.jpg" />
+            <p>
+              Our home is filled with the love of learning and to incorporate the importance of learning in our everyday
+              lives by trying out new things.
+            </p>
+
+            <button id="events-btn" class="home-btn-group" onClick="location.href='/journey/education'">
+              Read More
+            </button>
+
+          </div>
+
+          <div class="projects-wrapper-group">
+
+            <h1><span class="fa fa-tachometer"></span>Projects</h1>
+            <img loading="lazy" src="/images/home/projects.jpg" />
+            <p>
+              Side projects really helps us to expand our skill set, uncover new
+              interests, learn about new technology and promote divergent
+              thinking.
+            </p>
+
+            <button id="projects-btn" class="home-btn-group" onClick="location.href='/projects'">
+              Read More
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- Our Purpose -->
+
+    <section id="home-our-purpose-section" class="home-section-group">
+
+      <article class="home-article-group">
+
+        <div class="home-our-purpose-con-group">
+
+          <div class="home-our-purpose-wrapper-group">
+
+            <h1><span class="fa fa-life-ring"></span>Our Purpose</h1>
+            <p>
+              Be a family that loves the Lord with all our heart, mind, soul as
+              we reach out to our world.<br><br>
+
+              We commit to be for each other and work together as a team. We
+              resolve to be caring, helpful, encouraging, loving, loyal, to have
+              a servants heart, to enjoy each other and to never give up.
+            </p>
+
+            <button id="our-purpose-btn" class="home-btn-group" onClick="location.href='/about'">
+              Read More
+            </button>
+
+          </div>
+
+          <div class="home-our-purpose-img-wrapper-group">
+            <img src="/images/home/our_purpose.png" />
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+  </main>
+
+  <footer id="show-footer-template"></footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="/js/home.js"></script>
+
+  <script>
+    function comingSoon() {
+      var comingSoon = document.getElementById('welcome-btn');
+      comingSoon.style.backgroundColor = "orange";
+      comingSoon.innerHTML = 'COMING SOON!'
+    }
+  </script>
+</body>
+
+
+</html>

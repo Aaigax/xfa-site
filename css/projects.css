@@ -1,0 +1,93 @@
+section.project-section-group {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+article.project-article-group {
+  margin-bottom: 60px;
+}
+
+div.project-about-wrapper-group h1,
+h3,
+p {
+  margin-bottom: 20px;
+}
+
+article.project-article-group:last-child {
+  margin-bottom: 0px;
+}
+
+/* --------- Swiper Slide ----------- */
+
+.swiper-wrapper .swiper-slide {
+  display: flex;
+  flex-direction: row;
+  cursor: grab;
+}
+
+.swiper-slide img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+}
+
+div.project-info-wrapper-group {
+  margin-right: 20px;
+}
+
+div.project-leader-img-wrapper-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+div.project-leader-img-wrapper-group img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: solid 2px white;
+}
+
+@media(min-width:1061px) and (max-width:1500px) {
+
+  article.project-article-group {
+    width: 90%;
+  }
+
+  .swiper-wrapper .swiper-slide {
+    display: block;
+    column-count: 2;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+  }
+
+  div.project-info-wrapper-group {
+    margin-right: 0px;
+  }
+
+}
+
+/* ==================== Mobile : Portrait ================================================ */
+
+@media only screen and (max-width:1060px) {
+
+  article.project-article-group {
+    width: 90%;
+  }
+
+  .swiper-wrapper .swiper-slide {
+    display: block;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+  }
+
+  div.project-info-wrapper-group {
+    margin-right: 0px;
+  }
+
+}

@@ -1,0 +1,25 @@
+section.contact-section-group {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+article.contact-article-group {
+  margin-bottom: 60px;
+}
+
+div.contact-con-group {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.contact-con-group h1,
+p {
+  margin-bottom: 30px;
+}
+
+footer {
+  position: absolute;
+}

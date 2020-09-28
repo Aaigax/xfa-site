@@ -1,0 +1,207 @@
+section#edu-about-section {
+  background-color: #9bba1f;
+}
+
+section#edu-science-section {
+  background-color: #ffa20f;
+}
+
+section#edu-tech-section {
+  background-color: #f73f3f;
+}
+
+section#edu-book-club-section {
+  background-color: #9bba1f;
+}
+
+section.edu-section-group {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+div.edu-about-group h1 {
+  margin-bottom: 20px;
+}
+
+div.edu-grid-group {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+div.edu-content-con-group {
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+  height: 100%;
+}
+
+div.edu-content-con-group div h1,
+div.edu-content-con-group div h3 {
+  margin-bottom: 20px;
+}
+
+div.edu-content-con-group div {
+  margin-bottom: 20px;
+  padding-right: 40px;
+}
+
+div.edu-content-con-group div:last-child {
+  margin-bottom: 0px;
+}
+
+div.edu-topics-wrapper-con h2 {
+  margin-bottom: 20px;
+}
+
+div.edu-topics-wrapper-con ul {
+  list-style-type: none;
+  cursor: pointer;
+  column-count: 2;
+}
+
+div.edu-topics-wrapper-con ul li {
+  padding: 10px;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+div.edu-topics-wrapper-con ul li:hover {
+  background-color: #15c1e5;
+}
+
+.active {
+  background-color: #15c1e5;
+}
+
+/* ------ Swiper Slide --------- */
+
+.swiper-container {
+  grid-row: 1;
+  grid-column: 2;
+  width: 100%;
+  height: 400px;
+}
+
+.swiper-container .swiper-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-container .swiper-wrapper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 100%;
+  background: #000;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  color: #262626;
+  background: #fff;
+}
+
+.card .img-con-group {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: #000;
+}
+
+.card .img-con-group img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  background: #000;
+}
+
+.card .card-info-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.card .card-info-group a {
+  font-size: 40px;
+  cursor: pointer;
+  color: red;
+}
+
+.card .card-info-group a:hover {
+  color: black;
+}
+
+/* Modal-Backdrop */
+
+div.modal-backdrop-con {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: #353535 !important;
+}
+
+div.modal-backdrop-con div.modal-slide-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+button.modal-close-btn {
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: normal;
+  cursor: pointer;
+  z-index: 100;
+  margin: 20px;
+  border: none;
+  background-color: #4d4d4d;
+}
+
+button.modal-close-btn:hover {
+  border: none;
+  background-color: #6e6e6e;
+}
+
+/* ==================== Mobile : Portrait ================================================ */
+
+@media only screen and (max-width:1060px) {
+
+  div.edu-grid-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.edu-content-con-group {
+    order: 2;
+  }
+
+  div.edu-content-con-group div {
+    padding-right: 0px;
+  }
+
+  div.edu-topics-wrapper-con ul {
+    column-count: 1;
+  }
+
+}

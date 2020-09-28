@@ -1,0 +1,251 @@
+section#home-welcome-section {
+  background-color: #9bba1f;
+}
+
+section.home-section-group {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+article.home-article-group h1 {
+  margin-bottom: 30px;
+}
+
+article.home-article-group button {
+  margin-top: 30px;
+  border: none;
+  width: 200px;
+  height: 50px;
+  background-color: #9bba1f;
+}
+
+div.home-welcome-con-group {
+  display: grid;
+  grid-template-columns: 45% 55%;
+}
+
+div.home-welcome-wrapper-group {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.home-welcome-img-wrapper-group {
+  grid-row: 1;
+  grid-column: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.home-welcome-wrapper-group button {
+  background-color: #f73f3f;
+}
+
+article button {
+  margin-bottom: 5px;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, .2);
+}
+
+article button:hover {
+  background-color: #ffa20f;
+}
+
+div.home-welcome-img-wrapper-group img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: solid 3px white;
+}
+
+div.home-welcome-img-wrapper-group img#home-welcome-img-1 {
+  width: 200px;
+  height: 200px;
+  transform: translate(110%, 80%);
+}
+
+div.home-welcome-img-wrapper-group img#home-welcome-img-2 {
+  margin-top: 0px;
+  transform: translate(50%, 0%);
+}
+
+div.home-welcome-img-wrapper-group img#home-welcome-img-3 {
+  width: 250px;
+  height: 250px;
+  z-index: 100;
+  margin-top: 200px;
+}
+
+section#home-events-section {
+  background-color: #f73f3f;
+}
+
+div.home-events-con-group {
+  column-count: 3;
+  height: auto;
+}
+
+div.home-events-con-group img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+section#home-our-purpose-section {
+  color: black;
+  background-color: rgb(245, 245, 245);
+}
+
+div.home-our-purpose-con-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+div.home-our-purpose-wrapper-group {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+}
+
+div.home-our-purpose-img-wrapper-group {
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.home-our-purpose-con-group img {
+  width: 50%;
+  height: 50%;
+}
+
+/* ---------- Swiper Slide ---------- */
+
+.swiper-container {
+  width: 100%;
+  height: 600px;
+  background-color: white;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  background: rgba(0, 0, 0, 0.5);
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-wrapper div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Modal-Backdrop */
+
+div.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-image: linear-gradient(#ffa20f, #9bba1f) !important;
+}
+
+.show-quiz-template {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* ==================== Mobile : Portrait ================================================ */
+
+@media only screen and (max-width:1060px) {
+
+  .home-article-group {
+    width: 90%;
+  }
+
+  .swiper-container {
+    height: 300px;
+  }
+
+  div.home-welcome-con-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.home-welcome-img-wrapper-group {
+    display: none;
+  }
+
+  div.home-events-con-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.home-events-con-group div {
+    margin-bottom: 40px;
+  }
+
+  div.home-events-con-group div:last-child {
+    margin-bottom: 0px;
+  }
+
+  div.home-our-purpose-con-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.home-our-purpose-con-group div.home-our-purpose-wrapper-group {
+    order: 2;
+  }
+
+  div.home-our-purpose-img-wrapper-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  div.home-our-purpose-img-wrapper-group img {
+    order: 1;
+    width: 200px;
+    height: 200px;
+    object-position: -20px;
+    border-radius: 50%;
+    padding: 5px;
+    border: solid 2px rgb(202, 202, 202);
+  }
+
+}
