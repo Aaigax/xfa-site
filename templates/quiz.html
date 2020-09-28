@@ -590,7 +590,8 @@
         if (this.readyState == 4 && this.status == 200) {}
       };
 
-      xmlhttp.open("POST", "http://localhost:8080/api/quiz/correct-ans-counter", true);
+      xmlhttp.open("POST",
+        "http://xfasite-env.eba-3icap9gx.ap-southeast-2.elasticbeanstalk.com/api/quiz/correct-ans-counter", true);
       xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       xmlhttp.send(JSON.stringify(correctAnsCounterArr));
 
