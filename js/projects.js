@@ -68,7 +68,6 @@ function populate_projects_slider() {
     projectName.innerHTML = clone_projectArray[x].project_name + ' (' + clone_projectArray[x].progress + ')';
     infoCard.appendChild(projectName);
 
-
     var leaderImgWrapper = document.createElement('div');
     leaderImgWrapper.className = 'project-leader-img-wrapper-group';
     infoCard.appendChild(leaderImgWrapper);
