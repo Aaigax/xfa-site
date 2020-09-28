@@ -146,6 +146,8 @@ module.exports = function (app, passport) {
 
       };
 
+      connection.end();
+
     })
 
   });
@@ -246,22 +248,22 @@ module.exports = function (app, passport) {
       var where = 'WHERE quiz_id = ?';
 
       const excQuery = update + set + where;
-      connection.query(excQuery, [quizID],
+      connection.query(excQuery, [quizID], function (err) {
 
-        function (err) {
-          if (!err) {
+        if (!err) {
 
-            console.log('UPDATED | correct ans counter id: ' + quizID);
+          console.log('UPDATED | correct ans counter id: ' + quizID);
 
-            return false;
+          return false;
 
-          } else {
+        } else {
 
-            console.log(err)
+          console.log(err)
 
-          }
+        };
 
-        })
+      })
+
 
     }
 
@@ -298,6 +300,8 @@ module.exports = function (app, passport) {
           }
 
         })
+
+      connection.end();
 
     }
 

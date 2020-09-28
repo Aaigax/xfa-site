@@ -536,7 +536,7 @@ function send_adventure_id_request_to_server() {
     if (this.readyState == 4 && this.status == 200) {}
   };
 
-  xmlhttp.open("POST", "http://xfasite-env.eba-3icap9gx.ap-southeast-2.elasticbeanstalk.com/api/adventure/image-id", true);
+  xmlhttp.open("POST", "http://quiztik.com/api/adventure/image-id", true);
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xmlhttp.send(JSON.stringify(adv_id_array));
 
