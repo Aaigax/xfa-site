@@ -82,10 +82,10 @@ function populate_vic_img_slider() {
 
     if (vic_swiper_wrapper.title === clone_advArray[x].state) {
 
-      var adventure = clone_advArray[x].category + '/',
-        country = clone_advArray[x].country + '/',
-        state = clone_advArray[x].state + '/',
-        folderName = clone_advArray[x].folder_name + '/',
+      var adventure = clone_advArray[x].category.toLowerCase() + '/',
+        country = clone_advArray[x].country.toLowerCase() + '/',
+        state = clone_advArray[x].state.toLowerCase() + '/',
+        folderName = clone_advArray[x].folder_name.toLowerCase() + '/',
         imageName = clone_advArray[x].image_name,
         imageDirectory = "../../images/journey/",
         fullImageDir = imageDirectory + adventure + country + state + folderName + imageName;
