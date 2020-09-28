@@ -4,7 +4,8 @@ var connection = mysql.createConnection({
    host: 'xfa-site.ch17u3pxo3ux.ap-southeast-2.rds.amazonaws.com',
    user: 'admin',
    password: 'AlatinaX!83',
-   database: 'xfa-site',
+   database: 'db_xfafamilyzone',
+   port: 3306,
    multipleStatements: true
 });
 
