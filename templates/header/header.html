@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- <link rel="stylesheet" href="../../css/reset.css"> -->
+
+  <title>Header • Template</title>
+
+  <style>
+    header {
+      top: 0;
+      position: fixed;
+      z-index: 200;
+      width: 100%;
+      height: auto;
+      background-color: #15c1e5;
+    }
+
+    a#home-a {
+      background-color: #ffa20f;
+    }
+
+    a#journey-a {
+      background-color: #9bba1f;
+    }
+
+    a#blog-a {
+      background-color: #f73f3f;
+    }
+
+    a#contact-a {
+      background-color: #ffa20f;
+    }
+
+    a#projects-a {
+      background-color: #9bba1f;
+    }
+
+    nav {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 70%;
+      height: 150px;
+      margin: auto;
+    }
+
+    li.menu-icon {
+      display: none;
+    }
+
+    span.navbar-toggle {
+      display: none;
+    }
+
+    span.fa {
+      margin-right: 10px;
+    }
+
+    nav div.logo-con {
+      grid-row: 1;
+      grid-column: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: min(1.3em);
+      font-weight: bold;
+    }
+
+    ul.main-menu-ul-group {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      width: auto;
+      height: auto;
+      font-size: 1.2em;
+      font-weight: bold;
+      list-style: none;
+    }
+
+    ul.main-menu-ul-group a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      width: 150px;
+      height: 100px;
+      color: white;
+      border-radius: 20px 5px 0px 0px;
+    }
+
+    ul.main-menu-ul-group a:hover {
+      transition: all 500ms;
+      height: 120px;
+    }
+
+    /* Sub-Menu */
+
+    ul.main-menu-ul-group ul.journey-sub-menu-ul-group {
+      display: none;
+      flex-direction: column;
+      width: 200px;
+      height: auto;
+      color: white;
+      list-style: none;
+      position: absolute;
+      border: solid 1px #86a11b;
+      background-color: #9bba1f;
+    }
+
+    ul.main-menu-ul-group li:hover ul {
+      display: flex;
+    }
+
+    ul.main-menu-ul-group ul.journey-sub-menu-ul-group a {
+      display: block;
+      top: 150px;
+      width: auto;
+      height: 70px;
+      line-height: 70px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-decoration: none;
+      color: white;
+      border-radius: 0;
+      border-bottom: solid 1px #86a11b;
+    }
+
+    ul.main-menu-ul-group ul.journey-sub-menu-ul-group a:hover {
+      transition: all 250ms ease;
+      background-color: #ffa20f;
+    }
+
+    /* ==================== Laptop ================================================ */
+
+    @media (min-width: 1501px) and (max-width: 1700px) {
+      nav {
+        width: 90%;
+      }
+    }
+
+    /* ==================== Ipad ================================================ */
+
+    @media (min-width: 1061px) and (max-width: 1500px) {
+
+      nav {
+        width: 95%;
+      }
+
+    }
+
+    /* ==================== Mobile : Portrait ================================================ */
+
+    @media only screen and (max-width:1060px) {
+
+      nav {
+        width: 90%;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      div.logo-con {
+        display: block;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+
+      span.navbar-toggle {
+        display: block;
+        margin-top: 10px;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      a#home-a,
+      a#journey-a,
+      a#blog-a,
+      a#contact-a,
+      a#projects-a {
+        background-color: transparent;
+      }
+
+      a#home-a:hover,
+      a#journey-a:hover,
+      a#blog-a:hover,
+      a#contact-a:hover,
+      a#projects-a:hover {
+        background-color: #ffa20f;
+      }
+
+      ul.main-menu-ul-group {
+        display: none;
+        position: fixed;
+        left: 0;
+        margin-top: 60px;
+        width: 220px;
+        height: 100%;
+        border-right: solid 1px #7d9716;
+        animation: slideOutRight 500ms forwards;
+        background-color: #8ca81a;
+      }
+
+      ul.main-menu-ul-group a {
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: auto;
+        height: 60px;
+        border-radius: 0;
+      }
+
+      ul.main-menu-ul-group a:hover {
+        transition: none;
+        height: 60px;
+      }
+
+      ul.active-ul {
+        display: block;
+
+      }
+
+      @keyframes slideOutRight {
+
+        0% {
+          transform: translateX(-900px);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      /* Sub-Menu */
+
+      ul.main-menu-ul-group ul.journey-sub-menu-ul-group {
+        display: none;
+        position: relative;
+        width: 100%;
+        border: none;
+        background-color: #97b424;
+      }
+
+      ul.main-menu-ul-group ul.journey-sub-menu-ul-group a {
+        display: block;
+        width: auto;
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 0;
+      }
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header id="show-header-template"></header>
+
+  <template id="header-template">
+
+    <header>
+
+      <nav>
+
+        <div class="logo-con">
+          XFA Family Zone
+        </div>
+
+        <span id="menu-toggle-span" class="navbar-toggle"><i class="fa fa-bars"></i></span>
+
+        <ul id="main-menu-ul" class="main-menu-ul-group">
+
+          <li>
+            <a id="home-a" href="/"><span class="fa fa-home"></span>Home</a>
+          </li>
+
+          <li>
+            <a id="journey-a" href="#"><span class="fa fa-globe"></span>Journey +</a>
+            <ul class="journey-sub-menu-ul-group">
+              <li><a href="/journey/adventure">Adventure</a>
+              <li><a href="/journey/education">Education</a>
+              <li><a href="/journey/entertainment">Entertainment</a>
+            </ul>
+          </li>
+
+          <li>
+            <a id="blog-a" href="/blog/parenting"><span class="fa fa-pencil-square-o"></span>Blog</a>
+          </li>
+
+          <li>
+            <a id="contact-a" name="contact" href="/contact"><span class="fa fa-envelope-o"></span>Contact</a>
+          </li>
+
+          <li>
+            <a id="projects-a" href="/projects"><span class="fa fa-tachometer"></span>Projects</a>
+          </li>
+        </ul>
+
+      </nav>
+
+    </header>
+
+  </template>
+
+  <script>
+    var headerContent = document.getElementById('header-template');
+
+    var copyHeaderTemp = document.importNode(headerContent.content, true);
+
+    var showHeaderTemp = document.getElementById('show-header-template');
+    showHeaderTemp.appendChild(copyHeaderTemp);
+
+    var mainMenuUL = document.getElementById('main-menu-ul');
+    var menuToggle = document.getElementById('menu-toggle-span');
+    menuToggle.onclick = function () {
+      mainMenuUL.classList.toggle('active-ul');
+    };
+
+    mainMenuUL.onmouseleave = function () {
+      if (this.classList.contains("active-ul")) {
+        this.classList.remove("active-ul");
+      }
+    };
+  </script>
+
+
+</body>
+
+
+</html>

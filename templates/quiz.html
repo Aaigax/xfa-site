@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quiz Me • Template</title>
+
+  <link rel="stylesheet" href="/css/reset.css">
+
+  <style>
+    article.quiz-article {
+      width: 70%;
+      height: auto;
+    }
+
+    div.quiz-container {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div.answers-con {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    div.quiz-title-img-wrapper {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    div.quiz-title-img-wrapper img {
+      width: 15%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    h2.category {
+      font-size: 1.2em;
+      padding: 0px 30px 0px 30px;
+      margin-bottom: 30px;
+      line-height: 30px;
+      background-color: #9bba1f;
+    }
+
+    h1.question {
+      text-align: center;
+      font-size: 1.7em;
+    }
+
+    div.answers-con {
+      display: flex;
+      flex-direction: column;
+    }
+
+    div.answers-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    div.answers-wrapper span {
+      margin-bottom: 20px;
+    }
+
+    div.answers-wrapper span:last-child {
+      margin-bottom: 0px;
+    }
+
+    span input[type=radio] {
+      width: 25px;
+      height: 25px;
+      margin-right: 20px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    span label {
+      cursor: pointer;
+    }
+
+    div.confetti-wrapper {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      background-color: transparent;
+    }
+
+    div.confetti-wrapper img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    div.btns-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    button.green-btn,
+    button.red-btn,
+    button.check-your-answer-btn {
+      width: auto;
+      height: auto;
+      border: none;
+      padding: 20px;
+      font-size: 1.3em;
+    }
+
+    button.green-btn:hover,
+    button.red-btn:hover,
+    button.check-your-answer-btn {
+      background-color: #ffa20f;
+    }
+
+    button.check-your-answer-btn {
+      box-shadow: 0px 3px 2px #5b6d13;
+      background-color: #8ba71b;
+    }
+
+    button.green-btn {
+      box-shadow: 0px 3px 2px #5b6d13;
+      background-color: #8ba71b;
+    }
+
+    button.red-btn {
+      z-index: 500;
+      margin-left: 20px;
+      box-shadow: 0px 3px 2px #a32a2a;
+      background-color: #f73f3f;
+    }
+
+    div.animation-gif-wrapper {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      top: 4.3vh;
+      left: 10vw;
+      cursor: pointer;
+    }
+
+    div.animation-gif-wrapper img {
+      width: 40%;
+      height: auto;
+      border-radius: 15%;
+    }
+
+    @media only screen and (max-width:1060px) {
+
+      article.quiz-article {
+        width: 90%;
+      }
+
+      div.quiz-title-img-wrapper img {
+        width: 35%;
+      }
+
+      div.btns-wrapper {
+        width: 90%;
+      }
+
+    }
+
+    @media only screen and (max-width: 380px) {
+
+      article.quiz-article {
+        width: 95%;
+      }
+
+      div.quiz-title-img-wrapper {
+        margin-bottom: 20px;
+      }
+
+      div.quiz-title-img-wrapper img {
+        width: 30%;
+      }
+
+      h1.question {
+        font-size: 1.3em;
+      }
+
+      h2.category {
+        font-size: 1.2em;
+      }
+
+      div.answers-con {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <article class="quiz-article">
+
+    <div class="confetti-wrapper">
+      <img class="confetti-img" src="">
+    </div>
+
+    <div class="quiz-container">
+
+      <div class="quiz-title-img-wrapper">
+        <img src="/images/quiz/daily_quiz_202.png" alt="">
+      </div>
+
+      <h2 class="category">Category</h2>
+
+      <h1 class="question">Question</h1>
+
+      <div class="answers-con">
+
+        <div class="answers-wrapper">
+
+          <span><input type="radio" id="option1" name="option" checked="false">
+            <label for="option1">Option 1</label></span>
+
+          <span><input type="radio" id="option2" name="option" checked="false">
+            <label for="option2">Option 2</label></span>
+
+          <span><input type="radio" id="option3" name="option" checked="false">
+            <label for="option3">Option 3</label></span>
+
+          <span><input type="radio" id="option4" name="option" checked="false">
+            <label for="option4">Option 4</label></span>
+
+        </div>
+
+        <div class="animation-gif-wrapper">
+          <img src="" id="animation-gif-img" />
+        </div>
+
+      </div>
+
+      <div class="btns-wrapper">
+        <button class="check-your-answer-btn">Check Your Answer</button>
+        <button class="green-btn">Try Again</button>
+        <button class="red-btn">Close</button>
+      </div>
+
+      <audio class="correct-ans-audio" preload="auto">
+        <source src="/audio/correct_answer.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio class="wrong-ans-audio" preload="auto">
+        <source src="/audio/wrong_answer.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio class="wooden-drums-audio" preload="auto">
+        <source src="/audio/wooden_drums.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+
+  </article>
+
+  <script>
+    var tryAgainBtn = document.getElementsByClassName('green-btn')[0];
+    var closeBtn = document.getElementsByClassName('red-btn')[0];
+    var question = document.getElementsByClassName('question')[0];
+    var answer = document.getElementsByClassName('answer')[0];
+    var animationGifWrapper = document.getElementsByClassName('animation-gif-wrapper')[0];
+    var modal = document.getElementsByClassName('modal')[0];
+    var answersWrapper = document.getElementsByClassName('answers-wrapper')[0];
+    var quizContainer = document.getElementsByClassName('quiz-container')[0];
+    var confettiGif = document.getElementsByClassName('confetti-wrapper')[0];
+    var confettiImg = document.getElementsByClassName('confetti-img')[0];
+    var quizCategory = document.getElementsByClassName('category')[0];
+
+    var audCorrectAns = document.getElementsByClassName("correct-ans-audio")[0];
+    var audWrongAns = document.getElementsByClassName("wrong-ans-audio")[0];
+    var audWoodenDrums = document.getElementsByClassName('wooden-drums-audio')[0];
+
+    // Buttons:
+
+    var checkAnswerBtn = document.getElementsByClassName('check-your-answer-btn')[0];
+    checkAnswerBtn.onclick = function () {
+      check_Answer();
+    };
+
+    var tryAgainBtn = document.getElementsByClassName('green-btn')[0];
+    tryAgainBtn.onclick = function () {
+
+      if (tryAgainBtn.innerHTML === 'Try Again') {
+
+        populateQuiz();
+        restart_audio();
+        pause_audio();
+
+      }
+
+    };
+
+    var closeBtn = document.getElementsByClassName('red-btn')[0];
+    closeBtn.onclick = function () {
+
+      close_form();
+
+    };
+
+    var clone_quizArray;
+
+    function call_quizJSON_API() {
+
+      $.get('/api/quizes', function (dbData) {
+
+        clone_quizArray = [].concat(dbData);
+
+        populateQuiz();
+        preload_audio();
+
+        console.log('clone_quizArray', clone_quizArray)
+
+      })
+
+    };
+
+    var correctAnswer;
+    var setTimeOut;
+    var correctAnsCounterArr = [];
+    var wrongAnsCounterArr = [];
+
+    function populateQuiz() {
+
+      for (var i = 0; i < clone_quizArray.length; i++) {
+
+        quizCategory.innerHTML = clone_quizArray[i].category;
+        question.innerHTML = clone_quizArray[i].question;
+
+        document.querySelector('label[for="option1"]').innerHTML = clone_quizArray[i].option_1;
+        document.querySelector('label[for="option2"]').innerHTML = clone_quizArray[i].option_2;
+        document.querySelector('label[for="option3"]').innerHTML = clone_quizArray[i].option_3;
+        document.querySelector('label[for="option4"]').innerHTML = clone_quizArray[i].option_4;
+
+        document.querySelector('input[id="option1"]').value = clone_quizArray[i].option_1;
+        document.querySelector('input[id="option2"]').value = clone_quizArray[i].option_2;
+        document.querySelector('input[id="option3"]').value = clone_quizArray[i].option_3;
+        document.querySelector('input[id="option4"]').value = clone_quizArray[i].option_4;
+
+        correctAnswer = clone_quizArray[i].correct_answer;
+
+        answersWrapper.style.display = 'flex';
+        checkAnswerBtn.style.display = 'block';
+
+        confettiGif.style.display = 'none';
+        animationGifWrapper.style.display = 'none';
+        tryAgainBtn.style.display = 'none';
+        closeBtn.style.display = 'none';
+
+      };
+
+      clear_radio_btns();
+
+    };
+
+    function clear_radio_btns() {
+
+      var radioBtn = document.querySelector('input[name="option"]:checked');
+
+      if (radioBtn.checked === true) {
+        radioBtn.checked = false;
+
+      } else {
+
+        return false;
+      }
+
+    };
+
+    function check_Answer() {
+
+      var checkboxes = document.getElementsByName('option');
+
+      for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked == true) {
+
+          if (checkboxes[i].value === correctAnswer) {
+
+            correct_answer();
+            happyCharacter();
+
+            setTimeOut = setTimeout(function () {
+              close_form();
+            }, 6000);
+
+            break;
+
+          } else {
+
+            wrong_answer();
+            sadCharacter();
+
+            break;
+
+          }
+        }
+      }
+    };
+
+    function correct_answer() {
+
+      confettiImg.src = 'https://media.giphy.com/media/RkDMUSW2Nw7u67kaiA/giphy.gif';
+
+      question.innerHTML = 'Correct!';
+
+      audCorrectAns.play();
+      audWoodenDrums.play();
+
+      answersWrapper.style.display = 'none';
+      tryAgainBtn.style.display = 'none';
+      checkAnswerBtn.style.display = 'none';
+
+      confettiGif.style.display = 'block';
+      closeBtn.style.display = 'block';
+
+      if (correctAnsCounterArr.length > 0) {
+
+        return false;
+
+        sendRequest_correctAns_Counter();
+
+      } else {
+
+        correctAnsCounterArr.push({
+          quiz_id: clone_quizArray[0].quiz_id,
+        });
+
+        sendRequest_correctAns_Counter();
+
+      };
+
+      setTimeout(() => {
+        question.innerHTML = 'SEE YOU TOMORROW!'
+      }, 2500);
+
+    };
+
+    function wrong_answer() {
+
+      question.innerHTML = 'Incorrect!';
+      audWrongAns.play();
+
+      answersWrapper.style.display = 'none';
+      checkAnswerBtn.style.display = 'none';
+      confettiGif.style.display = 'none';
+
+      tryAgainBtn.style.display = 'block';
+      closeBtn.style.display = 'block';
+
+      if (wrongAnsCounterArr.length > 0) {
+
+        return false;
+
+        sendRequest_wrongAns_Counter();
+
+      } else {
+
+        wrongAnsCounterArr.push({
+          quiz_id: clone_quizArray[0].quiz_id,
+        });
+
+        sendRequest_wrongAns_Counter();
+
+      };
+
+    };
+
+    function restart_audio() {
+
+      audCorrectAns.currentTime = 0;
+      audWrongAns.currentTime = 0;
+      audWoodenDrums.currentTime = 0;
+
+    };
+
+    function preload_audio() {
+
+      audCorrectAns.load();
+      audWrongAns.load();
+      audWoodenDrums.load();
+
+    };
+
+    function pause_audio() {
+
+      audCorrectAns.pause();
+      audWrongAns.pause();
+      audWoodenDrums.pause();
+
+    };
+
+    function clear_confetti() {
+
+      confettiImg.src = '';
+
+    };
+
+    function reset_timeOut() {
+
+      var resetTimeOut = setTimeOut;
+      clearTimeout(resetTimeOut);
+
+    };
+
+    function close_form() {
+
+      restart_audio();
+      pause_audio();
+      clear_confetti();
+      reset_timeOut();
+
+      modal.style.display = 'none';
+
+    };
+
+    // -------- Animation ---------
+
+    var activeAnimation = 0;
+    var happyAnimationTotal = 8;
+    var sadAimationTotal = 5;
+
+    var happyAnimation = [
+      'https://media.giphy.com/media/WoQsRLfUEBPi9rpkxU/giphy.gif',
+      'https://media.giphy.com/media/MxYQrB9jeGzza/giphy.gif',
+      'https://media.giphy.com/media/0iUlkQl9JjRKKJSCOe/giphy.gif',
+      'https://media.giphy.com/media/mjmY5ATK4DYZQr4bEn/giphy.gif',
+      'https://media.giphy.com/media/50taz9lgG37j1M7poX/giphy.gif',
+      'https://media.giphy.com/media/xHvTbmYdXE76cUnDb3/giphy.gif',
+      'https://media.giphy.com/media/76j0zHa6GrWOdCNr6T/giphy.gif',
+      'https://media.giphy.com/media/n21dnYZrmqx2yx8daF/giphy.gif',
+    ];
+
+    var sadAnimation = [
+      'https://i.gifer.com/2r61.gif',
+      'https://media.giphy.com/media/qaqsLcgz3pRgOGIaag/giphy.gif',
+      'https://media.giphy.com/media/wrAGo0LXHYN153QxqU/giphy.gif',
+      'https://media.giphy.com/media/pUBkIepdkOUpWEA4fk/giphy.gif',
+      'https://media.giphy.com/media/G4WwAQw8auMbc1Z6DQ/giphy.gif',
+    ];
+
+    function happyCharacter() {
+
+      image = document.getElementById('animation-gif-img');
+      animationGifWrapper.style.display = 'flex';
+
+      for (var i = 0; i < happyAnimation.length; i++) {
+
+        activeAnimation = Math.floor(Math.random() * happyAnimationTotal);
+        image.src = happyAnimation[activeAnimation];
+
+      }
+
+    };
+
+    function sadCharacter() {
+
+      image = document.getElementById('animation-gif-img');
+      animationGifWrapper.style.display = 'flex';
+
+      for (var i = 0; i < sadAnimation.length; i++) {
+
+        activeAnimation = Math.floor(Math.random() * sadAimationTotal);
+        image.src = sadAnimation[activeAnimation];
+
+      }
+
+    };
+
+    function sendRequest_correctAns_Counter() {
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {}
+      };
+
+      xmlhttp.open("POST", "http://localhost:8080/api/quiz/correct-ans-counter", true);
+      xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xmlhttp.send(JSON.stringify(correctAnsCounterArr));
+
+    };
+
+    function sendRequest_wrongAns_Counter() {
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {}
+      };
+
+      xmlhttp.open("POST", "http://localhost:8080/api/quiz/wrong-ans-counter", true);
+      xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xmlhttp.send(JSON.stringify(wrongAnsCounterArr));
+
+    };
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+
+   <!-- <link rel="stylesheet" href="../../css/reset.css"> -->
+
+   <title>Image Gallery • Template</title>
+
+   <style>
+      article.img-gallery-article {
+         width: 50%;
+      }
+
+      div.img-slide-container {
+         position: relative;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         background-color: #353535;
+      }
+
+      div.img-slide-wrapper {
+         width: 80%;
+         height: 650px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         /* overflow: hidden; */
+      }
+
+      div.img-slide-wrapper img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+         z-index: 100;
+      }
+
+      div.navigation-wrapper {
+         position: absolute;
+         top: 50%;
+         -ms-transform: translateY(-50%);
+         transform: translateY(-50%);
+         z-index: 200;
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         background-color: transparent;
+      }
+
+      div.navigation-wrapper button {
+         font-size: 25px;
+         font-weight: 500;
+         width: 50px;
+         height: 50px;
+         border: none;
+         border-radius: 50%;
+         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         background-color: #4d4d4d;
+      }
+
+      div.navigation-wrapper button:focus {
+         outline-style: none;
+      }
+
+      div.navigation-wrapper button:hover {
+         background-color: #6e6e6e;
+      }
+
+
+      .loader {
+         display: inline-block;
+         width: 30px;
+         height: 30px;
+         position: relative;
+         border: 4px solid #Fff;
+         position: absolute;
+         animation: loader 2s infinite ease;
+
+      }
+
+      .loader-inner {
+         vertical-align: top;
+         display: inline-block;
+         width: 100%;
+         background-color: #fff;
+         animation: loader-inner 2s infinite ease-in;
+      }
+
+      @keyframes loader {
+         0% {
+            transform: rotate(0deg);
+         }
+
+         25% {
+            transform: rotate(180deg);
+         }
+
+         50% {
+            transform: rotate(180deg);
+         }
+
+         75% {
+            transform: rotate(360deg);
+         }
+
+         100% {
+            transform: rotate(360deg);
+         }
+      }
+
+      @keyframes loader-inner {
+         0% {
+            height: 0%;
+         }
+
+         25% {
+            height: 0%;
+         }
+
+         50% {
+            height: 100%;
+         }
+
+         75% {
+            height: 100%;
+         }
+
+         100% {
+            height: 0%;
+         }
+      }
+
+
+      /* ================= Responsive Design ========================= */
+
+      @media (min-width: 1401) and (max-width: 1920) {
+
+         article.img-gallery-article {
+            width: 50%;
+         }
+
+      }
+
+
+      @media (min-width: 1001px) and (max-width: 1400px) {
+
+         article.img-gallery-article {
+            width: 60%;
+         }
+
+         div.img-slide-wrapper {
+            width: 100%;
+            height: 500px;
+         }
+
+         div.navigation-wrapper {
+            width: 90%;
+         }
+
+         div.navigation-wrapper button {
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.5);
+         }
+
+         div .navigation-wrapper button:hover {
+            background: rgba(0, 0, 0, 0.7);
+         }
+
+      }
+
+      @media (min-width: 601px) and (max-width: 1000px) {
+
+         article.img-gallery-article {
+            width: 80%;
+         }
+
+         div.img-slide-wrapper {
+            width: 100%;
+            height: 450px;
+         }
+
+         div.navigation-wrapper {
+            width: 90%;
+         }
+
+         div.navigation-wrapper button {
+            background: rgba(0, 0, 0, 0.5);
+         }
+
+         div .navigation-wrapper button:hover {
+            background: rgba(0, 0, 0, 0.7);
+         }
+
+      }
+
+
+      @media only screen and (max-width:600px) {
+
+         article.img-gallery-article {
+            width: 100%;
+         }
+
+         div.img-slide-wrapper {
+            width: 100%;
+            height: 450px;
+         }
+
+         div.navigation-wrapper {
+            width: 90%;
+         }
+
+         div.navigation-wrapper button {
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.5);
+         }
+
+         div .navigation-wrapper button:hover {
+            background: rgba(0, 0, 0, 0.7);
+         }
+
+      }
+   </style>
+</head>
+
+<body>
+
+   <div id="show-image-gallery-template"></div>
+
+   <template id="image-gallery-template">
+
+      <article class="img-gallery-article">
+
+         <div class="img-slide-container">
+
+            <div class="img-slide-wrapper">
+
+               <!-- populated with js -->
+
+            </div>
+
+            <div class="navigation-wrapper">
+               <button id="prev-btn" class="previous-btn">◄</button>
+               <button id="next-btn" class="next-btn">►</button>
+            </div>
+
+      </article>
+
+   </template>
+
+</body>
+
+<script>
+   var headerContent = document.getElementById('image-gallery-template');
+
+   var copyTemplate = document.importNode(headerContent.content, true);
+
+   var insertNavTemplate = document.getElementById('show-image-gallery-template');
+   insertNavTemplate.appendChild(copyTemplate);
+</script>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Slide • Template</title>
+
+  <style>
+    article.video-slider-article {
+      width: 50%;
+    }
+
+    div.video-wrapper {
+      width: 100%;
+      height: 650px;
+      background-color: #353535;
+    }
+
+    div.video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ==================== Mobile : Portrait ================================================ */
+
+    @media only screen and (max-width:1060px) {
+
+      article.video-slider-article {
+        width: 95%;
+      }
+
+      div.video-wrapper {
+        width: 100%;
+        height: 450px;
+        background-color: #353535;
+      }
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="show-video-template"></div>
+
+  <template id="video-template">
+
+    <article class="video-slider-article">
+
+      <div class="video-wrapper">
+        <!-- populated with js -->
+      </div>
+
+    </article>
+
+  </template>
+
+  <script>
+    var headerContent = document.getElementById('video-template');
+
+    var copyTemplate = document.importNode(headerContent.content, true);
+
+    var insertNavTemplate = document.getElementById('show-video-template');
+    insertNavTemplate.appendChild(copyTemplate);
+  </script>
+
+</body>
+
+</html>

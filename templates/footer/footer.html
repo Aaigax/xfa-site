@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    footer {
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background-color: #15c1e5;
+    }
+
+    p.footer-p-group {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="show-footer-template"></div>
+
+  <template id="footer-template">
+
+    <footer>
+      <p class="footer-p-group">© Copyright 2020 XFA Family Zone.</p>
+    </footer>
+
+  </template>
+
+</body>
+
+<script>
+  var footerTemp = document.getElementById('footer-template');
+  var footerContent = document.getElementById('footer-template');
+
+  var copyTemp = document.importNode(footerContent.content, true);
+
+  var showFooterTemp = document.getElementById('show-footer-template');
+  showFooterTemp.appendChild(copyTemp);
+</script>
+
+</html>
