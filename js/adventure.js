@@ -497,10 +497,10 @@ function next_Item() {
 
   var img = document.getElementsByClassName('img-src')[0];
   img.src = fullImageDir = '../../images/journey/' +
-    clone_imgArray[index].category + '/' +
-    clone_imgArray[index].country + '/' +
-    clone_imgArray[index].state + '/' +
-    clone_imgArray[index].folder_name + '/' +
+    clone_imgArray[index].category.toLowerCase() + '/' +
+    clone_imgArray[index].country.toLowerCase() + '/' +
+    clone_imgArray[index].state.toLowerCase() + '/' +
+    clone_imgArray[index].folder_name.toLowerCase() + '/' +
     clone_imgArray[index].image_name;
 
   image_slide_counter(clone_imgArray.length);
