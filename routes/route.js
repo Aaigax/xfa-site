@@ -160,6 +160,8 @@ module.exports = function (app, passport) {
     var year = d.getFullYear();
     var currentDate = year + '-' + month + '-' + date;
 
+    console.log(currentDate);
+
     var select = 'SELECT quiz_id, category, question, option_1, option_2, option_3, option_4, correct_answer, DATE_FORMAT(scheduled_date, "%Y-%m-%d") AS scheduled_date' + ' ';
     var from = 'FROM tbl_quizes' + ' ';
     var where = 'WHERE scheduled_date = ?';
@@ -183,76 +185,115 @@ module.exports = function (app, passport) {
 
   });
 
-  var advID;
+}
 
-  function get_photo_gallery() {
+var advID;
 
-    app.get('/api/adventure/photo-gallery', notLoggedIn, function (req, res) {
+function get_photo_gallery() {
 
-      var select = 'SELECT adventure_fk_id, category, country, state, folder_name, image_name' + ' ';
-      var from = 'FROM tbl_images' + ' ';
-      var innerJoin = 'INNER JOIN tbl_adventure ON adventure_id = adventure_fk_id' + ' ';
-      var where = 'WHERE adventure_fk_id = ?';
+  app.get('/api/adventure/photo-gallery', notLoggedIn, function (req, res) {
 
-      var excQuery = select + from + innerJoin + where;
-      connection.query(excQuery, [advID], function (err, rows) {
+    var select = 'SELECT adventure_fk_id, category, country, state, folder_name, image_name' + ' ';
+    var from = 'FROM tbl_images' + ' ';
+    var innerJoin = 'INNER JOIN tbl_adventure ON adventure_id = adventure_fk_id' + ' ';
+    var where = 'WHERE adventure_fk_id = ?';
 
-        if (!err) {
+    var excQuery = select + from + innerJoin + where;
+    connection.query(excQuery, [advID], function (err, rows) {
 
-          res.send(rows);
+      if (!err) {
 
-        } else {
+        res.send(rows);
 
-          console.log(err);
+      } else {
 
-        };
+        console.log(err);
 
-      })
+      };
 
-    });
-
-  };
-
-  // POST:
-
-  app.post('/api/adventure/image-id', notLoggedIn, function (req, res) {
-
-    var adventure_id = req.body;
-
-    for (var i = 0; i < adventure_id.length; i++) {
-
-      advID = Number(adventure_id[i].id);
-
-      // ---------------------------------
-
-      setTimeout(() => {
-
-        get_photo_gallery();
-
-      }, 200);
-
-    }
+    })
 
   });
 
-  app.post('/api/quiz/correct-ans-counter', notLoggedIn, function (req, res) {
+};
 
-    var correctAnsCounterArr = req.body;
+// POST:
 
-    for (var i = 0; i < correctAnsCounterArr.length; i++) {
+app.post('/api/adventure/image-id', notLoggedIn, function (req, res) {
 
-      var quizID = correctAnsCounterArr[i].quiz_id;
+  var adventure_id = req.body;
 
-      var update = 'UPDATE tbl_quizes' + ' ';
-      var set = 'SET correct_ans_counter = correct_ans_counter + 1' + ' ';
-      var where = 'WHERE quiz_id = ?';
+  for (var i = 0; i < adventure_id.length; i++) {
 
-      const excQuery = update + set + where;
-      connection.query(excQuery, [quizID], function (err) {
+    advID = Number(adventure_id[i].id);
 
+    // ---------------------------------
+
+    setTimeout(() => {
+
+      get_photo_gallery();
+
+    }, 200);
+
+  }
+
+});
+
+app.post('/api/quiz/correct-ans-counter', notLoggedIn, function (req, res) {
+
+  var correctAnsCounterArr = req.body;
+
+  for (var i = 0; i < correctAnsCounterArr.length; i++) {
+
+    var quizID = correctAnsCounterArr[i].quiz_id;
+
+    var update = 'UPDATE tbl_quizes' + ' ';
+    var set = 'SET correct_ans_counter = correct_ans_counter + 1' + ' ';
+    var where = 'WHERE quiz_id = ?';
+
+    const excQuery = update + set + where;
+    connection.query(excQuery, [quizID], function (err) {
+
+      if (!err) {
+
+        console.log('UPDATED | correct ans counter id: ' + quizID);
+
+        return false;
+
+      } else {
+
+        console.log(err)
+
+      };
+
+    })
+
+
+  }
+
+});
+
+app.post('/api/quiz/wrong-ans-counter', notLoggedIn, function (req, res) {
+
+  var wrongAnsCounterArr = req.body;
+
+  console.log(wrongAnsCounterArr);
+
+  for (var i = 0; i < wrongAnsCounterArr.length; i++) {
+
+    var quizID = Number(wrongAnsCounterArr[0].quiz_id);
+
+    var update = 'UPDATE tbl_quizes' + ' ';
+    var set = 'SET wrong_ans_counter = wrong_ans_counter + 1' + ' ';
+    var where = 'WHERE quiz_id = ?';
+
+    const excQuery = update + set + where;
+    connection.query(excQuery, [quizID],
+
+      function (err) {
         if (!err) {
 
-          console.log('UPDATED | correct ans counter id: ' + quizID);
+          console.log('UPDATED | wrong ans counter id: ' + quizID);
 
           return false;
 
@@ -260,54 +301,16 @@ module.exports = function (app, passport) {
 
           console.log(err)
 
-        };
+        }
 
       })
 
+    connection.end();
 
-    }
+  }
 
-  });
+});
 
-  app.post('/api/quiz/wrong-ans-counter', notLoggedIn, function (req, res) {
-
-    var wrongAnsCounterArr = req.body;
-
-    console.log(wrongAnsCounterArr);
-
-    for (var i = 0; i < wrongAnsCounterArr.length; i++) {
-
-      var quizID = Number(wrongAnsCounterArr[0].quiz_id);
-
-      var update = 'UPDATE tbl_quizes' + ' ';
-      var set = 'SET wrong_ans_counter = wrong_ans_counter + 1' + ' ';
-      var where = 'WHERE quiz_id = ?';
-
-      const excQuery = update + set + where;
-      connection.query(excQuery, [quizID],
-
-        function (err) {
-          if (!err) {
-
-            console.log('UPDATED | wrong ans counter id: ' + quizID);
-
-            return false;
-
-          } else {
-
-            console.log(err)
-
-          }
-
-        })
-
-      connection.end();
-
-    }
-
-  });
-
-};
 
 // =====================================
 // ROUTE MIDDLEWARE:

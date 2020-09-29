@@ -250,9 +250,9 @@
       </div>
 
       <div class="btns-wrapper">
-        <button class="check-your-answer-btn">Check Your Answer</button>
-        <button class="green-btn">Try Again</button>
-        <button class="red-btn">Close</button>
+        <button class="check-your-answer-btn" style="display: none;">Check Your Answer</button>
+        <button class="green-btn" style="display: none;">Try Again</button>
+        <button class="red-btn" style="display: none;">Close</button>
       </div>
 
       <audio class="correct-ans-audio" preload="auto">
@@ -322,12 +322,11 @@
       $.get('/api/quizes', function (dbData) {
 
         clone_quizArray = [].concat(dbData);
-        console.log('clone qiuzArray: ', clone_quizArray);
-
-        populateQuiz();
-        preload_audio();
 
       })
+
+      populateQuiz();
+      preload_audio();
 
 
     };
