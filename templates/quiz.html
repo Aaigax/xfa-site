@@ -322,13 +322,13 @@
       $.get('/api/quizes', function (dbData) {
 
         clone_quizArray = [].concat(dbData);
+        console.log('clone qiuzArray: ', clone_quizArray);
 
         populateQuiz();
         preload_audio();
 
       })
 
-      console.log('clone qiuzArray: ', clone_quizArray);
 
     };
 
