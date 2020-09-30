@@ -132,7 +132,7 @@ require('./routes/route')(app, passport);
 // SETUP PORT:
 // =============================================================================
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3306;
 app.listen(port, () => {
    console.log('Port is running on: ' + port);
 });
